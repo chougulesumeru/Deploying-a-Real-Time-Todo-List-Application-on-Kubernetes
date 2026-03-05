@@ -1,0 +1,14 @@
+# configure service for backend (gives stable IP/DNS names)
+apiVersion: v1
+kind: Service
+metadata:
+  name: to-do-app-backend-service
+  namespace: to-do-app
+spec:
+  selectors:
+    app: to-do-app
+  ports:
+    - protocol: TCP
+      port: 3001
+      targetPort: 3001
+  type: clusterIP

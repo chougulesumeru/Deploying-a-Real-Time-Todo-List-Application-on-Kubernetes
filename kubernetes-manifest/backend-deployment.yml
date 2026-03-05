@@ -2,7 +2,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: to-do-app-backend
+  name: to-do-app-backend-deployment
   namespace: to-do-app
 spec:
   replicas: 3
