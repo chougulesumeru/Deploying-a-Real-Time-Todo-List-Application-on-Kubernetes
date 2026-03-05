@@ -1,25 +1,25 @@
-# configure deployment for backend and frontend
+# configure frontend for deployment
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: to-do-app-backend
+  name: to-do-app-frontend
   namespace: to-do-app
 spec:
-  replicas: 3
+  replicas: 2
   selectors:
     matchLabels:
       app: to-do-app
   template:
     metadata:
-      name: to-do-app-backend
+      name: to-do-app-frontend
       labels:
         app: to-do-app
     spec:
       containers:
-        - name: backend
-          image: to-do-backend:latest
+        - name: frontend-container
+          image: to-do-app-frontend:latest
           ports:
-            - containerPort: 3001
+            - containerPort: 80
           env:
             - name: MONGO_URL
-              value: "mongodb://mongo-service:2701/to-dos"
+              value: "mongo://mongo-service:2701/to-dos"
