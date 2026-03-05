@@ -1,0 +1,9 @@
+# config map for app settings 
+apiVersion: v1
+kind: ConfigMap
+metadata:
+   name: to-do-app-configmap
+   namespace: to-do-app
+data:
+   DEBUG: "true"
+   MAX_TODOS: "100" 
