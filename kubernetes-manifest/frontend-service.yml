@@ -1,0 +1,14 @@
+# create a service for frontend
+apiVersion: v1
+kind: Service
+metadata:
+  name: to-do-app-frontend-service
+  namespace: to-do-ap
+spec:
+  selectors:
+    app: to-do-app
+  ports:
+    - protocol: TCP
+      ports: 80
+      targetPort: 80
+  type: nodePort
