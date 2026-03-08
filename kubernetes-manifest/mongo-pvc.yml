@@ -1,0 +1,11 @@
+apiVersion: v1
+kind: PersistentVolumeClaim
+metadata:
+  name: mongo-pvc
+  namespace: to-do-app
+spec:
+  accessModes:
+    - ReadWriteOnce
+  resources:
+    requestes:
+      storage: 3Gi
