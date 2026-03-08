@@ -1,0 +1,12 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: mongo-service
+  namespace: to-do-app
+spec:
+  selector:
+    app: to-do-app
+  ports:
+    - port: 27017
+      targetPort: 27017
+      protocol: TCP
